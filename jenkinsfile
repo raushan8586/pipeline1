@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('download-latest-git-changes') {
+            steps {
+                git 'https://github.com/raushan8586/pipeline1.git'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
